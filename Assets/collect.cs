@@ -17,8 +17,9 @@ public class collect : MonoBehaviour
     {
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+            Debug.Log("22: " + itemName);  
         if (other.CompareTag("Player"))
         {
             Debug.Log("Eingesammelt: " + itemName);  
