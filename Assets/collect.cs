@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class collect : MonoBehaviour
 {
+    public string itemName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +15,13 @@ public class collect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      public string itemName;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Eingesammelt: " + itemName);  
+        }
     }
-}           }
+}
