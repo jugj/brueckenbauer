@@ -59,5 +59,4 @@ public class spielerbewegung : MonoBehaviour
     public void respawn(){
         this.gameObject.transform.position = Spawnpunkt.transform.position;
     }
-
 }

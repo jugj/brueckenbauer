@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Holz : MonoBehaviour
-
-{   public string itemName;
-
+{   
+    public string itemName;
+    private GameState gamestate;
 
     // Start is called before the first frame update
-     void Start()
+    void Start()
     {
-        
+        this.gamestate  = GameState.Instance;
     }
 
     // Update is called once per frame
@@ -25,7 +25,11 @@ public class Holz : MonoBehaviour
         {
             Debug.Log("Eingesammelt: " + itemName);  
         }
-    Destroy(this.gameObject);
+
+        gamestate.Holzanzahl += 1;
+        Debug.Log("Holzanzahl: " + gamestate.Holzanzahl);
+        Destroy(this.gameObject);
+
     }
       
 }
