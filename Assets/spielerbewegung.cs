@@ -23,12 +23,6 @@ public class spielerbewegung : MonoBehaviour
         if(Input.GetKey("right")){
         transform.Translate(Vector2.right * Time.deltaTime * Geschwindigkeit);
         }
-        if(Input.GetKey("shift + left")){
-        transform.Translate(Vector2.left * Time.deltaTime * 10);
-        }
-        if(Input.GetKey("shift + right")){
-        transform.Translate(Vector2.right * Time.deltaTime * 10);
-        }
         
     }
 }
