@@ -2,27 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spielerbewegung : MonoBehaviour
+public class Spieler : MonoBehaviour
 {
-    public float Geschwindigkeit=5f;
+    
+    public float Geschwindigkeit = 3f;
+    public float Sprungkraft = 3f;
+    public Rigidbody2D rigidbody;
+
+    Vector2 bewegungsvektor = new Vector2(0,0);
+    Vector2 laufvektor = new Vector2(0,0);
+    Vector2 sprungvektor = new Vector2(0,0);
+
+    bool istInDerLuft = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
-    { 
-        if(Input.GetKey("up")){
-        transform.Translate(Vector2.up * Time.deltaTime * Geschwindigkeit);}
-
-        if(Input.GetKey("left")){
-        transform.Translate(Vector2.left * Time.deltaTime * Geschwindigkeit);}
-
-        if(Input.GetKey("right")){
-        transform.Translate(Vector2.right * Time.deltaTime * Geschwindigkeit);
+    {   
+        if(rigidbody.velocity.y == 0.0f){
+            istInDerLuft = false;
+        }else{
+            istInDerLuft = true;
         }
-        
+
+
+
+        bewegungsvektor = new Vector2(0,0);
+        if (Input.GetKey("up") && !istInDerLuft)
+        {
+            bewegungsvektor = bewegungsvektor+Vector2.up*Sprungkraft;
+        }
+
+        if (Input.GetKey("right"))
+        {
+            bewegungsvektor = bewegungsvektor+Vector2.right*Geschwindigkeit;
+        }
+
+        if (Input.GetKey("left"))
+        {
+            bewegungsvektor = bewegungsvektor+Vector2.left*Geschwindigkeit;
+        }
     }
+
+    void FixedUpdate()
+    {
+        rigidbody.AddForce(bewegungsvektor, ForceMode2D.Impulse);
+    }
+
 }
