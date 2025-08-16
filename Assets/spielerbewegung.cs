@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spieler : MonoBehaviour
+public class spielerbewegung : MonoBehaviour
 {
     
     public float Geschwindigkeit = 3f;
     public float Sprungkraft = 3f;
     public Rigidbody2D rigidbody;
+
+    public GameObject Spawnpunkt;
 
     Vector2 bewegungsvektor = new Vector2(0,0);
     Vector2 laufvektor = new Vector2(0,0);
@@ -52,6 +54,10 @@ public class Spieler : MonoBehaviour
     void FixedUpdate()
     {
         rigidbody.AddForce(bewegungsvektor, ForceMode2D.Impulse);
+    }
+
+    public void respawn(){
+        this.gameObject.transform.position = Spawnpunkt.transform.position;
     }
 
 }

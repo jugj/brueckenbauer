@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class collect : MonoBehaviour
-{
-    public string itemName;
+public class Holz : MonoBehaviour
+
+{   public string itemName;
+
 
     // Start is called before the first frame update
-    void Start()
+     void Start()
     {
         
     }
@@ -24,9 +25,7 @@ public class collect : MonoBehaviour
         {
             Debug.Log("Eingesammelt: " + itemName);  
         }
-    
-    Destroy(other.gameObject);
+    Destroy(this.gameObject);
     }
-
-    
+      
 }
