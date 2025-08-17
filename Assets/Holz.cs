@@ -10,7 +10,7 @@ public class Holz : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gamestate  = GameState.Instance;
+        this.gamestate = GameState.Instance;
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class Holz : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-            Debug.Log("22: " + itemName);  
+        Debug.Log("22: " + gamestate);  
         if (other.CompareTag("Player"))
         {
             Debug.Log("Eingesammelt: " + itemName);  
