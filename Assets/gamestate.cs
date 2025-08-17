@@ -6,6 +6,7 @@ public class GameState : MonoBehaviour
 {
     public static GameState Instance {get; private set;}
     public int Holzanzahl = 0;
+    public int Steinanzahl = 0;
 
     private void Awake(){
         Debug.Log("init gamestate");
