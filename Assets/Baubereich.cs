@@ -7,6 +7,7 @@ public class Baubereich : MonoBehaviour
 {   public int benoetigtesHolz;
     public int benoetigtesStein;
     public GameState gamestate;
+    public string nextLevel = "minigame 1";
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class Baubereich : MonoBehaviour
         if(benoetigtesHolz<=gamestate.Holzanzahl && benoetigtesStein<=gamestate.Steinanzahl){
             gamestate.Holzanzahl -= benoetigtesHolz;
             gamestate.Steinanzahl -= benoetigtesStein;
-            SceneManager.LoadScene("minigame 1");
+            SceneManager.LoadScene(nextLevel);
         }
     }
 }

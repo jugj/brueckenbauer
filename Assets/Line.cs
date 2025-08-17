@@ -7,6 +7,7 @@ public class Line : MonoBehaviour
 {
     public string aktuellerWert = "p";
     public int richtige = 0;
+    public string nextLevel;
     GameObject otherGameObject;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class Line : MonoBehaviour
             Destroy(otherGameObject);
         }
         if(richtige>=5){
-            SceneManager.LoadScene("update 1");
+            SceneManager.LoadScene(nextLevel);
         }
     }
 
