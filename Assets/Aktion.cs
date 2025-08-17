@@ -6,12 +6,14 @@ using TMPro;
 public class Aktion : MonoBehaviour
 {
     public string wert;
-    public TextMeshProUGUI textelement;
+    public string[] keys={"a","s","d"};
+    public TextMeshPro textelement;
     // Start is called before the first frame update
     void Start()
     {  
         //ToDo: setze einen Random Wert
-        wert = "i";
+        int random = Random.Range(0, 4);
+        wert = keys[random];
         textelement.text = wert;
     }
 

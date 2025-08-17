@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawneAktion();
+        InvokeRepeating(nameof(spawneAktion), 0f, 1f);
     }
 
     // Update is called once per frame
